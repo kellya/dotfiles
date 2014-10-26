@@ -58,5 +58,6 @@ fi
 # Messing with the prompt
 autoload -U promptinit
 promptinit
+# Set the RPS1 to git status using the awesome zsh-git-prompt
 source /home/kellya/dotfiles/zsh/zsh-git-prompt/zshrc.sh
 RPS1='$(git_super_status)'
