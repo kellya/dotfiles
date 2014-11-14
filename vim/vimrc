@@ -14,6 +14,12 @@ set rtp+=~/.vim/bundle/vundle/
 set pastetoggle=<F10>
 call vundle#rc()
 
+"We are going to try the wrapping functions.  We'll see how that works
+"Python has nowrap set, so this generally shouldn't suck
+set wrap
+set linebreak
+set nolist
+
 " let Vundle manage Vundle
 " required! 
 Plugin 'gmarik/vundle'
