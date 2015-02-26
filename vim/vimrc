@@ -12,6 +12,7 @@ set softtabstop=4
 set autoindent
 set rtp+=~/.vim/bundle/vundle/
 set pastetoggle=<F10>
+set incsearch
 call vundle#rc()
 
 "We are going to try the wrapping functions.  We'll see how that works
