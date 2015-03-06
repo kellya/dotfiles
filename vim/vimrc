@@ -35,6 +35,7 @@ Plugin 'Rykka/clickable.vim'
 Plugin 'seveas/bind.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'flazz/vim-colorschemes'
+Plugin 'drmikehenry/vim-extline'
 
 filetype plugin indent on
 
