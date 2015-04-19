@@ -24,7 +24,8 @@ set nolist
 " let Vundle manage Vundle
 " required! 
 Plugin 'gmarik/vundle'
-Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+"Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
 Plugin 'klen/python-mode'
@@ -36,6 +37,7 @@ Plugin 'seveas/bind.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'drmikehenry/vim-extline'
+Plugin 'tpope/vim-surround.git'
 
 filetype plugin indent on
 
@@ -48,8 +50,10 @@ augroup vimrc_autocmds
 augroup END
 
 "Powerline setup
-set guifont=PowerLineSymbols\ DejaVu\ Sans\ Mono\ for\ Powerline\ 9
+" set guifont=PowerLineSymbols\ DejaVu\ Sans\ Mono\ for\ Powerline\ 9
+" set guifont=Anonymous\ Pro\ for\ Powerline\ Regular/9
 let g:Powerline_symbols = 'fancy'
+let g:airline_powerline_fonts = 1
 set laststatus=2
 
 "NerdTree map to <f2>
