@@ -24,8 +24,8 @@ set nolist
 " let Vundle manage Vundle
 " required! 
 Plugin 'gmarik/vundle'
-"Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
-Plugin 'bling/vim-airline'
+Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+"Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
 Plugin 'klen/python-mode'
