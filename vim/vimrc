@@ -3,19 +3,12 @@ set splitright
 filetype off
 " Handy hack to force a write using sudo when you forget to sudo vi
 cmap w!! w !sudo tee > /dev/null %
-
-"Make python-friendly tabs
-set tabstop=4
-set shiftwidth=4
-set smarttab
-set softtabstop=4
-set autoindent
 set rtp+=~/.vim/bundle/vundle/
 set pastetoggle=<F10>
 set incsearch
 set encoding=utf8
-call vundle#rc()
 
+call vundle#rc()
 "We are going to try the wrapping functions.  We'll see how that works
 "Python has nowrap set, so this generally shouldn't suck
 set wrap
@@ -42,6 +35,7 @@ Plugin 'tpope/vim-surround.git'
 Plugin 'ryanoasis/vim-webdevicons'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'brookhong/DBGPavim'
 filetype plugin indent on
 
 augroup vimrc_autocmds
@@ -112,4 +106,17 @@ let g:riv_fold_level = 0
 let g:riv_fold_auto_update = 0
 
 colorscheme jellybeans
-setlocal spell spelllang=en_us
+"setlocal spell spelllang=en_us
+set mouse=a
+
+"Make python-friendly tabs
+set tabstop=4
+set shiftwidth=4
+set smarttab
+set softtabstop=4
+set autoindent
+let &colorcolumn="80,".join(range(81,999),",")
+
+let g:dbgPavimPort = 9000
+let g:dbgPavimBreakAtEntry = 0
+let g:dbgPavimOnce = 1
