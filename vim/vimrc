@@ -36,6 +36,9 @@ Plugin 'ryanoasis/vim-webdevicons'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'brookhong/DBGPavim'
+Plugin 'tbabej/taskwiki'
+Plugin 'airblade/vim-gitgutter'
+
 filetype plugin indent on
 
 augroup vimrc_autocmds
