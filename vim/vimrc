@@ -132,3 +132,4 @@ let g:dbgPavimOnce = 1
 
 let python_highlight_all=1
 syntax on
+" if at first you don't succeed...commit a bunch of comments until you do
