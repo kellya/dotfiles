@@ -26,7 +26,7 @@ ZSH_THEME="agnoster"
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -46,7 +46,7 @@ ZSH_THEME="agnoster"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 # plugins=(git)
-plugins=(sudo taskwarrior common-aliases git-flow keybase geeknote vi-mode battery)
+plugins=(sudo taskwarrior common-aliases git-flow keybase geeknote vi-mode battery web-search)
 
 # User configuration
 
@@ -96,7 +96,9 @@ export PATH="/usr/local/heroku/bin:$PATH"
 source /usr/share/gems/gems/tmuxinator-0.6.11/completion/tmuxinator.zsh
 
 rand () {
-	    cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w ${1:-32} | head -n 1
+	    cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w ${1:-32} | head -n 1|tr -d '\n'
 	}
 alias dum='du -sh *|egrep ".*\.?[0-9]M"'
 alias keploy='echo -e "\e[101;97mKeploy was removed, its functionality is already built in ssh-copy-id, just use that\e[49m"; ssh-copy-id'
+cat /home/kellya/.local/share/franklinlogo.txt
+export PATH="$PATH:/home/kellya/go/bin"

@@ -12,6 +12,11 @@ set wrap
 set linebreak
 set nolist
 
+" Attempt to fix python/python3 issue
+" To run py2 stuff, you can force with "vim --cmd 'let py2 = 1'
+if exists('py2') && has('python')
+elseif has('python3')
+endif
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -38,6 +43,9 @@ Plugin 'drmikehenry/vim-extline'
 Plugin 'tpope/vim-surround.git'
 Plugin 'ryanoasis/vim-webdevicons'
 Plugin 'brookhong/DBGPavim'
+Plugin 'dhruvasagar/vim-table-mode'
+Plugin 'nathanielc/vim-tickscript'
+Plugin 'fatih/vim-go'
 
 " Add all your plugins here (note older versions of Vundle used Bundle instead
 " of Plugin)
@@ -132,4 +140,7 @@ let g:dbgPavimOnce = 1
 
 let python_highlight_all=1
 syntax on
-" if at first you don't succeed...commit a bunch of comments until you do
+
+" For table mode RST friendliness
+let g:table_mode_corner_corner='+'
+let g:table_mode_header_fillchar='='
