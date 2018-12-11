@@ -46,7 +46,7 @@ COMPLETION_WAITING_DOTS="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 # plugins=(git)
-plugins=(sudo taskwarrior common-aliases git-flow keybase geeknote vi-mode battery web-search)
+plugins=(sudo taskwarrior common-aliases git-flow keybase vi-mode battery web-search)
 
 # User configuration
 
@@ -100,6 +100,7 @@ rand () {
 	}
 alias dum='du -sh *|egrep ".*\.?[0-9]M"'
 alias keploy='echo -e "\e[101;97mKeploy was removed, its functionality is already built in ssh-copy-id, just use that\e[49m"; ssh-copy-id'
+<<<<<<< HEAD
 alias shrug='curl shrug.io|xclip'
 cat /home/kellya/.local/share/franklinlogo.txt
 export PATH="$PATH:/home/kellya/go/bin"
@@ -108,3 +109,6 @@ export WORKON_HOME=/mnt/vdisks/projects/python_virtualenvs
 export AGNOSTER_PROMPT_SEGMENTS=("prompt_status" "prompt_context" "prompt_virtualenv" "prompt_dir" "prompt_end")
 prompt_git() {
 }
+=======
+cat /home/kellya/.local/share/franklinlogo.txt
+export PATH="$PATH:/home/kellya/go/bin"
