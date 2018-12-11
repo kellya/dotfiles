@@ -37,6 +37,7 @@ COMPLETION_WAITING_DOTS="true"
 # stamp shown in the history command output.
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # HIST_STAMPS="mm/dd/yyyy"
+HIST_STAMPS="yyyy-mm-dd"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
@@ -57,32 +58,6 @@ export PATH="/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/
 DISABLE_AUTO_UPDATE='true'
 source $ZSH/oh-my-zsh.sh
 
-export EDITOR='vim'
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-#
 source ~/dotfiles/zsh/zsh-git-prompt/zshrc.sh
 RPS1='$(git_super_status)'
 
@@ -90,22 +65,32 @@ source ~/.autoenv/activate.sh
 unsetopt histverify
 alias in='task add +in'
 alias rtask="task rc:/home/kellya/.taskrc_tinslin"
-export LPASS_AGENT_TIMEOUT=0
-export PATH="/usr/local/heroku/bin:$PATH"
 #eval "$(ntfy shell-integration)"
 source /usr/share/gems/gems/tmuxinator-0.6.11/completion/tmuxinator.zsh
 
+#Custom Functions
+#quick and dirty random string generator
 rand () {
 	    cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w ${1:-32} | head -n 1|tr -d '\n'
 	}
+
+# Override the git prompt, because I don't want it in my left-hand prompt, and I can't use the variable to unset it for some reason
+prompt_git() {
+
+}
+
+#Aliases
 alias dum='du -sh *|egrep ".*\.?[0-9]M"'
 alias keploy='echo -e "\e[101;97mKeploy was removed, its functionality is already built in ssh-copy-id, just use that\e[49m"; ssh-copy-id'
 alias shrug='curl shrug.io|xclip'
+
+#Variable Exports
+export EDITOR='vim'
 export PATH="$PATH:/home/kellya/go/bin"
 export WORKON_HOME=/mnt/vdisks/projects/python_virtualenvs
+export LPASS_AGENT_TIMEOUT=0
+export PATH="/usr/local/heroku/bin:$PATH"
 
+#This didn't work, but I'll leave it here in case someday it does
 export AGNOSTER_PROMPT_SEGMENTS=("prompt_status" "prompt_context" "prompt_virtualenv" "prompt_dir" "prompt_end")
-# Override the git prompt, because I don't want it in my left-hand prompt, and I can't use the variable to unset it for some reason
-prompt_git() {
-}
 cat /home/kellya/.local/share/franklinlogo.txt
