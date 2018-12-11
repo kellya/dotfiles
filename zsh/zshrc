@@ -5,7 +5,7 @@ export ZSH=/home/kellya/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-#ZSH_THEME="agnoster"
+ZSH_THEME="agnoster"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -100,15 +100,12 @@ rand () {
 	}
 alias dum='du -sh *|egrep ".*\.?[0-9]M"'
 alias keploy='echo -e "\e[101;97mKeploy was removed, its functionality is already built in ssh-copy-id, just use that\e[49m"; ssh-copy-id'
-<<<<<<< HEAD
 alias shrug='curl shrug.io|xclip'
-cat /home/kellya/.local/share/franklinlogo.txt
 export PATH="$PATH:/home/kellya/go/bin"
 export WORKON_HOME=/mnt/vdisks/projects/python_virtualenvs
 
 export AGNOSTER_PROMPT_SEGMENTS=("prompt_status" "prompt_context" "prompt_virtualenv" "prompt_dir" "prompt_end")
+# Override the git prompt, because I don't want it in my left-hand prompt, and I can't use the variable to unset it for some reason
 prompt_git() {
 }
-=======
 cat /home/kellya/.local/share/franklinlogo.txt
-export PATH="$PATH:/home/kellya/go/bin"
