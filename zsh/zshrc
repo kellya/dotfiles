@@ -50,9 +50,6 @@ HIST_STAMPS="yyyy-mm-dd"
 plugins=(sudo taskwarrior common-aliases git-flow keybase vi-mode battery web-search)
 
 # User configuration
-# Load custom functions
-for f (~/.functions/**/*(N.))  . $f
-
 export PATH="/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/home/kellya/bin:/home/kellya/incoming/git-annex.linux:/home/kellya/bin/keybase/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -85,6 +82,10 @@ export WORKON_HOME=/mnt/vdisks/projects/python_virtualenvs
 export LPASS_AGENT_TIMEOUT=0
 export PATH="/usr/local/heroku/bin:$PATH"
 
+#Source all the custom functions
+# Load custom functions
+for f (~/.functions/**/*(N.))  . $f
+
 #This didn't work, but I'll leave it here in case someday it does
-export AGNOSTER_PROMPT_SEGMENTS=("prompt_status" "prompt_context" "prompt_virtualenv" "prompt_dir" "prompt_end")
+#export AGNOSTER_PROMPT_SEGMENTS=("prompt_status" "prompt_context" "prompt_virtualenv" "prompt_dir" "prompt_end")
 cat /home/kellya/.local/share/franklinlogo.txt
