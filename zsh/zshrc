@@ -69,6 +69,8 @@ alias in='task add +in'
 alias rtask="task rc:/home/kellya/.taskrc_tinslin"
 #eval "$(ntfy shell-integration)"
 source /usr/share/gems/gems/tmuxinator-0.6.11/completion/tmuxinator.zsh
+source ~/.private_aliases
+
 
 #Aliases
 alias dum='du -sh *|egrep ".*\.?[0-9]M"'
