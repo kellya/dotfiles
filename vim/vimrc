@@ -13,6 +13,7 @@ set linebreak
 set nolist
 
 " Stop the py3 imp complaining for YCM (and others using python3
+" solution found at https://github.com/vim/vim/issues/3117
 if !has('patch-8.1.201')
 	silent! python3 1
 endif
