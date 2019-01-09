@@ -50,6 +50,8 @@ HIST_STAMPS="yyyy-mm-dd"
 plugins=(sudo taskwarrior common-aliases git-flow keybase vi-mode battery web-search)
 
 # User configuration
+# Load custom functions
+for f (~/.functions/**/*(N.))  . $f
 
 export PATH="/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/home/kellya/bin:/home/kellya/incoming/git-annex.linux:/home/kellya/bin/keybase/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -68,21 +70,11 @@ alias rtask="task rc:/home/kellya/.taskrc_tinslin"
 #eval "$(ntfy shell-integration)"
 source /usr/share/gems/gems/tmuxinator-0.6.11/completion/tmuxinator.zsh
 
-#Custom Functions
-#quick and dirty random string generator
-rand () {
-	    cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w ${1:-32} | head -n 1|tr -d '\n'
-	}
-
-# Override the git prompt, because I don't want it in my left-hand prompt, and I can't use the variable to unset it for some reason
-prompt_git() {
-
-}
-
 #Aliases
 alias dum='du -sh *|egrep ".*\.?[0-9]M"'
 alias keploy='echo -e "\e[101;97mKeploy was removed, its functionality is already built in ssh-copy-id, just use that\e[49m"; ssh-copy-id'
 alias shrug='curl shrug.io|xclip'
+alias weather='curl wttr.in'
 
 #Variable Exports
 export EDITOR='vim'
