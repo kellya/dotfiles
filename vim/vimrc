@@ -12,8 +12,10 @@ set wrap
 set linebreak
 set nolist
 
-" Stop the py3 imp complaining for YCM (and others using python3
-" solution found at https://github.com/vim/vim/issues/3117
+" Attempt to fix python/python3 issue
+" To run py2 stuff, you can force with "vim --cmd 'let py2 = 1'
+"if exists('py2') && has('python')
+"elseif has('python3')
 if !has('patch-8.1.201')
 	silent! python3 1
 endif
@@ -45,7 +47,12 @@ Plugin 'ryanoasis/vim-webdevicons'
 Plugin 'brookhong/DBGPavim'
 Plugin 'dhruvasagar/vim-table-mode'
 Plugin 'nathanielc/vim-tickscript'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
 Plugin 'fatih/vim-go'
+Plugin 'dbeniamine/cheat.sh-vim'
+"let g:deoplete#enable_at_startup = 1
+"Plugin 'Shougo/deoplete.nvim'
 
 " Add all your plugins here (note older versions of Vundle used Bundle instead
 " of Plugin)
@@ -116,8 +123,8 @@ let g:pymode_lint_checker = "flake8,pep8"
 " Auto check on save                                                                                                                  
 let g:pymode_lint_write = 1                                                                                                           
 
-" Support virtualenv                                                                                                                  
-let g:pymode_virtualenv = 1                                                                                                           
+" Support virtualenv
+let g:pymode_virtualenv = 1
 
 " Enable breakpoints plugin                                                                                                           
 let g:pymode_breakpoint = 1                                                                                                           
@@ -133,6 +140,7 @@ let g:pymode_syntax_space_errors = g:pymode_syntax_all
 let g:pymode_folding = 0                                                                                                              
 let g:riv_fold_level = 0                                                                                                              
 let g:riv_fold_auto_update = 0                                                                                                        
+nnoremap <space> za
 
 let g:dbgPavimPort = 9000                                                                                                             
 let g:dbgPavimBreakAtEntry = 0                                                                                                        
