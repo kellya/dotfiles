@@ -51,6 +51,7 @@ Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'fatih/vim-go'
 Plugin 'dbeniamine/cheat.sh-vim'
+Plugin 'jacqueswww/vim-vyper'
 "let g:deoplete#enable_at_startup = 1
 "Plugin 'Shougo/deoplete.nvim'
 
@@ -80,6 +81,7 @@ set shiftwidth=4
 set smarttab
 set softtabstop=4
 set autoindent
+set expandtab
 let &colorcolumn="80,".join(range(81,999),",")
 
 augroup vimrc_autocmds
@@ -88,6 +90,8 @@ augroup vimrc_autocmds
 	autocmd FileType python highlight Excess ctermbg=DarkGrey guibg=Black
 	autocmd FileType python match Excess /\%80v.*/
 	autocmd FileType python set nowrap
+"    autocmd FileType rst set textwidth=80
+    autocmd FileType markdown set textwidth=80
 augroup END
 
 set mouse=a
