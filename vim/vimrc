@@ -131,8 +131,8 @@ let g:pymode_lint_write = 1
 let g:pymode_virtualenv = 1
 
 " Enable breakpoints plugin                                                                                                           
-let g:pymode_breakpoint = 1                                                                                                           
-let g:pymode_breakpoint_key = '<leader>b'                                                                                             
+ let g:pymode_breakpoint = 1                                                                                                           
+ let g:pymode_breakpoint_key = '<leader>b'                                                                                             
 
 " syntax highlighting                                                                                                                 
 let g:pymode_syntax = 1                                                                                                               
@@ -152,6 +152,8 @@ let g:dbgPavimOnce = 1
 
 let python_highlight_all=1
 syntax on
+
+let g:pymode_python = 'python3'
 
 " For table mode RST friendliness
 let g:table_mode_corner_corner='+'

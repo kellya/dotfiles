@@ -60,10 +60,28 @@ source $ZSH/oh-my-zsh.sh
 source ~/dotfiles/zsh/zsh-git-prompt/zshrc.sh
 RPS1='$(git_super_status)'
 
-source ~/.autoenv/activate.sh
+#source ~/.autoenv/activate.sh
+
+# changing over to direnv from autoenv
+eval "$(direnv hook zsh)"
+
+# Add PS1 for python virtualenv in direnv
+show_virtual_env() {
+      if [[ -n "$VIRTUAL_ENV" && -n "$DIRENV_DIR" ]]; then
+              echo "($(basename $VIRTUAL_ENV))"
+                fi
+            }
+        PS1='$(show_virtual_env)'$PS1
+
+#--------- End of direnv block ------------------------------------------------  
+
 unsetopt histverify
 alias in='task add +in'
 alias rtask="task rc:/home/kellya/.taskrc_tinslin"
+alias atwork="task context work"
+alias athome="task context home"
+alias atschool="task context school"
+alias atnone="task context none;"
 #eval "$(ntfy shell-integration)"
 source /usr/share/gems/gems/tmuxinator-0.6.11/completion/tmuxinator.zsh
 source ~/.private_aliases
