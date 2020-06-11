@@ -47,7 +47,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 # plugins=(git)
-plugins=(sudo taskwarrior common-aliases git-flow keybase vi-mode battery web-search)
+plugins=(sudo taskwarrior common-aliases git-flow github keybase vi-mode battery web-search)
 
 # User configuration
 export PATH="/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/home/kellya/bin:/home/kellya/incoming/git-annex.linux:/home/kellya/bin/keybase/bin"
@@ -116,3 +116,7 @@ cat /home/kellya/.local/share/franklinlogo.txt
 prompt_git () {
         :
 }
+
+
+# hyperdrive autocomplete setup
+HYPERDRIVE_AC_ZSH_SETUP_PATH=/home/kellya/.cache/hyperdrive-daemon/autocomplete/zsh_setup && test -f $HYPERDRIVE_AC_ZSH_SETUP_PATH && source $HYPERDRIVE_AC_ZSH_SETUP_PATH;
