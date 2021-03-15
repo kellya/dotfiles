@@ -1,3 +1,4 @@
+# Rules for handling the sidebar
 bind index,pager \Cp sidebar-prev
 # Move the highlight to the next mailbox
 bind index,pager \Cn sidebar-next
@@ -16,3 +17,7 @@ bind index,pager <F5> sidebar-prev-new
 bind index,pager <F6> sidebar-next-new
 # Toggle the visibility of the Sidebar.
 bind index,pager B sidebar-toggle-visible
+# make it so vi keys navigate the index, capital vi keys navigate the sidebar
+bind index K sidebar-prev          # got to previous folder in sidebar
+bind index J sidebar-next         # got to next folder in sidebar
+bind index <space> sidebar-open         # open selected folder from sidebar

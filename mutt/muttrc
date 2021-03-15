@@ -1,4 +1,3 @@
-### save and sync my sent messages
 #set record=~/Maildir/arachnitech/Sent
 set sidebar_visible = yes
 ## set record="~/Maildir/Sent Mail"
@@ -16,15 +15,16 @@ alternative_order text/plain text/enriched text/html
 auto_view text/html
 auto_view text/calendar
 
-
+# Just do what I tell you to, consequences be damned
+set confirmappend=yes
+set delete=yes
+# Show new notification when mail arrives
 set new_mail_command="notify-send --icon='/home/kellya/images/mutt-1.png' \
    'New Emails' '%n new messages' &"
 
-#source ~/.mutt/bindings
-#source ~/.mutt/mailboxes
-#source ~/.mutt/gpg
-#source ~/.mutt/macros
-#source ~/.mutt/notmuch
+# Run a script to cat anything that has .rc as the extension to auto source things
 source ~/.mutt/sources.sh|
+
+# Addressbook lookup
 set query_command="khard email -p '%s'"
 bind editor <Tab> complete-query

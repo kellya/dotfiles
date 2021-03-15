@@ -9,6 +9,7 @@ macro index t "<pipe-message>mutt2task<enter>"
 # 'L' performs a notmuch query, showing only the results
 macro index L "<enter-command>unset wait_key<enter><shell-escape>read -p 'notmuch query: ' x; echo \$x >~/.cache/mutt_terms<enter><limit>~i \"\`notmuch search --output=messages \$(cat ~/.cache/mutt_terms) | head -n 600 | perl -le '@a=<>;chomp@a;s/\^id:// for@a;$,=\"|\";print@a'\`\"<enter>" "show only messages matching a notmuch pattern"
 # 'a' shows all messages again (supersedes default <alias> binding)
+### Nutmuch stuff
 macro index a "<limit>all\n" "show all messages (undo limit)"
 macro index \\\\ "<vfolder-from-query>"              # looks up a hand made query
 macro index A "<modify-labels>+archive -unread -inbox\\n"        # tag as Archived
@@ -16,6 +17,4 @@ macro index I "<modify-labels>-inbox -unread\\n"                 # removed from 
 macro index S "<modify-labels-then-hide>-inbox -unread +junk\\n" # tag as Junk mail
 macro index + "<modify-labels>+*\\n<sync-mailbox>"               # tag as starred
 macro index - "<modify-labels>-*\\n<sync-mailbox>"               # tag as unstarred
-bind index <left> sidebar-prev          # got to previous folder in sidebar
-bind index <right> sidebar-next         # got to next folder in sidebar
-bind index <space> sidebar-open         # open selected folder from sidebar
+#### end notmuch stuff
