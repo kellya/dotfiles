@@ -28,32 +28,42 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
+"
+" Python Plugins
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'nvie/vim-flake8'
 Plugin 'python-mode/python-mode'
 Plugin 'airblade/vim-gitgutter'
+"
+"general development plugins
 Plugin 'scrooloose/nerdtree'
 Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim'}
 Plugin 'flazz/vim-colorschemes'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'ervandew/supertab'
+Plugin 'ryanoasis/vim-webdevicons'
+Plugin 'direnv/direnv.vim'
+Plugin 'ActivityWatch/aw-watcher-vim'
+"
 " Bind zonefile stuff
 Plugin 'seveas/bind.vim'
+"
 " extline extends rst stuff
 Plugin 'drmikehenry/vim-extline'
 Plugin 'tpope/vim-surround.git'
-Plugin 'ryanoasis/vim-webdevicons'
 Plugin 'brookhong/DBGPavim'
 Plugin 'dhruvasagar/vim-table-mode'
-Plugin 'nathanielc/vim-tickscript'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
+" Additional languages
+Plugin 'nathanielc/vim-tickscript'
 Plugin 'fatih/vim-go'
 Plugin 'dbeniamine/cheat.sh-vim'
 Plugin 'jacqueswww/vim-vyper'
-Plugin 'direnv/direnv.vim'
 Plugin 'tomlion/vim-solidity'
+Plugin 'kien/ctrlp.vim'
+
 
 "let g:deoplete#enable_at_startup = 1
 "Plugin 'Shougo/deoplete.nvim'
@@ -163,3 +173,5 @@ let g:table_mode_corner_corner='+'
 let g:table_mode_header_fillchar='='
 let g:webdevicons_enable = 1
 let g:webdevicons_enable_nerdtree = 1
+set relativenumber
+set number
