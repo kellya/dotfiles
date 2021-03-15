@@ -1,0 +1,2 @@
+set nm_default_url = "notmuch:///home/kellya/Maildir"
+virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"

@@ -1,0 +1,14 @@
+set from      = "kellya@arachnitech.com"
+set sendmail  = "/usr/bin/msmtp -a arachnitech"
+set mbox      = "+arachnitech/archive"
+set postponed = "+arachnitech/drafts"
+
+color status green default
+
+macro index D \
+    "<save-message>+arachnitech/Trash<enter>" \
+    "move message to the trash"
+
+macro index S \
+    "<save-message>+arachnitech/Spam<enter>"  \
+        "mark message as spam"

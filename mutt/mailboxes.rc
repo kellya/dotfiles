@@ -1,0 +1,4 @@
+mailboxes \
+  "+arachnitech/INBOX" \
+  "+franklin/INBOX" \
+  "+franklin/Sent"

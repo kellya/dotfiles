@@ -1,0 +1,5 @@
+color header cyan black subject
+color hdrdefault brightwhite black
+color quoted brightgreen black
+color status black cyan
+color indicator default blue

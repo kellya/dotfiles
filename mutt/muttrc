@@ -1,0 +1,30 @@
+### save and sync my sent messages
+#set record=~/Maildir/arachnitech/Sent
+set sidebar_visible = yes
+## set record="~/Maildir/Sent Mail"
+set spoolfile="+franklin/INBOX"
+# set header cache
+set header_cache=~/Localmail/hcache
+set mbox_type=Maildir
+set folder=~/Maildir/
+set sort=reverse-date-received
+# IMAP and INBOX (this should map to any existing IMAP folders)
+folder-hook arachnitech/* source ~/.mutt/accounts/arachnitech
+folder-hook franklin/* source ~/.mutt/accounts/franklin
+# auto_view text/html
+alternative_order text/plain text/enriched text/html
+auto_view text/html
+auto_view text/calendar
+
+
+set new_mail_command="notify-send --icon='/home/kellya/images/mutt-1.png' \
+   'New Emails' '%n new messages' &"
+
+#source ~/.mutt/bindings
+#source ~/.mutt/mailboxes
+#source ~/.mutt/gpg
+#source ~/.mutt/macros
+#source ~/.mutt/notmuch
+source ~/.mutt/sources.sh|
+set query_command="khard email -p '%s'"
+bind editor <Tab> complete-query
