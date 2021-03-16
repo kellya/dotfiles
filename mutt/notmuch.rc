@@ -1,2 +1,4 @@
 set nm_default_url = "notmuch:///home/kellya/Maildir"
-virtual-mailboxes "My INBOX" "notmuch://?query=tag:inbox"
+virtual-mailboxes "Universal Inbox" "notmuch://?query=tag:inbox"
+virtual-mailboxes "Arachnitech INBOX" "notmuch://?query=tag:inbox&query=to:*arachnitech.com"
+virtual-mailboxes "Franklin INBOX" "notmuch://?query=tag:inbox&query=to:*franklin.edu"

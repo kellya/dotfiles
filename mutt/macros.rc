@@ -24,4 +24,4 @@ macro index - "<modify-labels>-*\\n<sync-mailbox>"               # tag as unstar
 macro attach A "<pipe-message>/home/kellya/projects/public/mutt-filters/vcalendar-filter | /home/kellya/projects/public/khal/misc/mutt2khal<enter>"
 
 # Archive
-macro index A ":set confirmappend=no delete=yes\n<save-message>=archive\n<sync-mailbox>:set confirmappend=no delete=yes\n<modify-labels>+archive -unread -inbox\\n"
+# macro index A ":set confirmappend=no delete=yes\n<save-message>=archive\n<sync-mailbox>:set confirmappend=no delete=yes\n<modify-labels>+archive -unread -inbox\\n"

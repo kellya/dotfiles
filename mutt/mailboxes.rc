@@ -1,4 +1,6 @@
 mailboxes \
   "+arachnitech/INBOX" \
+  "+arachnitech/Blockchain" \
   "+franklin/INBOX" \
+  "+franklin/Archive" \
   "+franklin/Sent"
