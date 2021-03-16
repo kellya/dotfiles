@@ -1,1 +1,1 @@
-cat *.rc
+cat ~/.mutt/*.rc
