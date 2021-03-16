@@ -5,8 +5,8 @@ set crypt_use_pka = no
 set crypt_autosign = yes
 set crypt_autoencrypt = no
 set crypt_autopgp = yes 
-set pgp_sign_as=FE3A66764329CE891E807CD7DC441667D5FCB16F
+set pgp_sign_as=738CA93A2DAD8D06C991CE4E5495537542CF2D94
 
 send2-hook . unset pgp_sign_as
-send2-hook '~f alex.kelly@franklin.edu' set pgp_sign_as=FE3A66764329CE891E807CD7DC441667D5FCB16F
+send2-hook '~f alex.kelly@franklin.edu' set pgp_sign_as=738CA93A2DAD8D06C991CE4E5495537542CF2D94
 send2-hook '~f kellya@arachnitech.com' set pgp_sign_as=15CD8B0B88DD99E8882B7A90DB2139896E9F21BD
