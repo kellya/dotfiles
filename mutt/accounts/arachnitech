@@ -2,6 +2,8 @@ set from      = "kellya@arachnitech.com"
 set sendmail  = "/usr/bin/msmtp -a arachnitech"
 set mbox      = "+arachnitech/archive"
 set postponed = "+arachnitech/drafts"
+set record=+arachnitech/sent
+
 
 color status green default
 

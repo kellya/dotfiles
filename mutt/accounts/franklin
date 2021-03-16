@@ -2,6 +2,7 @@ set from      = "alex.kelly@franklin.edu"
 set sendmail  = "/usr/bin/msmtp -a franklin"
 set mbox      = "+franklin/archive"
 set postponed = "+franklin/drafts"
+set record=+franklin/Sent
 
 color status cyan default
 set pgp_default_key = "FE3A66764329CE891E807CD7DC441667D5FCB16F"
