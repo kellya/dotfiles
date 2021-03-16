@@ -12,3 +12,7 @@ macro index D \
 macro index S \
     "<save-message>+arachnitech/Spam<enter>"  \
         "mark message as spam"
+
+macro index A \
+    "<save-message>+arachnitech/Archive<enter>"  \
+        "Archive message"
