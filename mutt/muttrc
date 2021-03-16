@@ -2,8 +2,9 @@
 set sidebar_visible = yes
 set sidebar_short_path                  # Shorten mailbox names
 set sidebar_delim_chars="/"             # Delete everything up to the last / character
-set sidebar_folder_indent               # Indent folders whose names we've shortened
-set sidebar_indent_string="  "          # Indent with two spaces
+set sidebar_width=27
+#set sidebar_folder_indent               # Indent folders whose names we've shortened
+#set sidebar_indent_string="  "          # Indent with two spaces
 color sidebar_new yellow default
 color sidebar_indicator default color17         # Dark blue background
 color sidebar_highlight white   color238        # Grey background

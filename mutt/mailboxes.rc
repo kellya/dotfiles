@@ -1,6 +1,5 @@
-mailboxes \
-  "+arachnitech/INBOX" \
-  "+arachnitech/Blockchain" \
-  "+franklin/INBOX" \
-  "+franklin/Archive" \
-  "+franklin/Sent"
+named-mailboxes "====== Arachnitech ======" "+arachnitech/INBOX"
+named-mailboxes "  Blockchain" "+arachnitech/Blockchain"
+named-mailboxes "======== Franklin =======" "+franklin/INBOX"
+named-mailboxes "  Archive" "+franklin/Archive"
+named-mailboxes "  Sent" "+franklin/Sent"
