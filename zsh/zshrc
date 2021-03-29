@@ -48,6 +48,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Add wisely, as too many plugins slow down shell startup.
 # plugins=(git)
 plugins=(sudo taskwarrior common-aliases git-flow github keybase vi-mode fzf python)
+###plugins+=(zsh-vi-mode)
 
 # User configuration
 export PATH="/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/home/kellya/bin:/home/kellya/incoming/git-annex.linux:/home/kellya/bin/keybase/bin:/home/kellya/.local/bin"
@@ -142,8 +143,9 @@ export PATH="$HOME/.poetry/bin:$PATH"
 
 #
 #FZF stuff
-source /usr/share/fzf/shell/key-bindings.zsh
-source ~/.oh-my-zsh/completions/fzf_completion
+#source /usr/share/fzf/shell/key-bindings.zsh
+#source ~/.oh-my-zsh/completions/fzf_completion
 export FZF_DEFAULT_OPTS="--extended"
 export FZF_DEFAULT_COMMAND="fd --type f"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+zvm_after_init_commands+=('[ -f /usr/share/fzf/shell/key-bindings.zsh ] && source ~/.oh-my-zsh/completions/fzf_completion')
