@@ -48,7 +48,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Add wisely, as too many plugins slow down shell startup.
 # plugins=(git)
 plugins=(sudo taskwarrior common-aliases git-flow github keybase vi-mode fzf python)
-###plugins+=(zsh-vi-mode)
+plugins+=(zsh-vi-mode)
 
 # User configuration
 export PATH="/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/home/kellya/bin:/home/kellya/incoming/git-annex.linux:/home/kellya/bin/keybase/bin:/home/kellya/.local/bin"
@@ -124,6 +124,7 @@ HYPERDRIVE_AC_ZSH_SETUP_PATH=/home/kellya/.cache/hyperdrive-daemon/autocomplete/
 alias vi=nvim
 alias ashow="litecli --auto-vertical-output /home/kellya/snap/accountable2you/common/storage.db -e \"select * from log;\""
 alias akill="litecli --auto-vertical-output /home/kellya/snap/accountable2you/common/storage.db -e \"delete from log;\""
+alias mutt="neomutt"
 fpath+=~/.zfunc
 compinit
 kitty + complete setup zsh | source /dev/stdin
@@ -144,8 +145,16 @@ export PATH="$HOME/.poetry/bin:$PATH"
 #
 #FZF stuff
 #source /usr/share/fzf/shell/key-bindings.zsh
-#source ~/.oh-my-zsh/completions/fzf_completion
+zvm_after_init_commands+=('[ -f /usr/share/fzf/shell/key-bindings.zsh ] && source /usr/share/fzf/shell/key-bindings.zsh')
+source ~/.oh-my-zsh/completions/fzf_completion
 export FZF_DEFAULT_OPTS="--extended"
 export FZF_DEFAULT_COMMAND="fd --type f"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-zvm_after_init_commands+=('[ -f /usr/share/fzf/shell/key-bindings.zsh ] && source ~/.oh-my-zsh/completions/fzf_completion')
+
+#ZVM customizations
+# Cursors seem backwards, swap 'em
+ZVM_INSERT_MODE_CURSOR=$ZVM_CURSOR_BLOCK
+ZVM_NORMAL_MODE_CURSOR=$ZVM_CURSOR_BEAM
+ZVM_OPPEND_MODE_CURSOR=$ZVM_CURSOR_UNDERLINE
+# defaults to last, make each line always insert
+ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT
