@@ -1,3 +1,82 @@
+let g:plugged_home = '~/.vim/plugged'
+
+call plug#begin(g:plugged_home)
+  " UI related
+  Plug 'chriskempson/base16-vim'
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
+  " Better Visual Guide
+  Plug 'Yggdroot/indentLine'
+  " syntax check
+  Plug 'w0rp/ale'
+  " Autocomplete
+  Plug 'ncm2/ncm2'
+  Plug 'roxma/nvim-yarp'
+  Plug 'ncm2/ncm2-bufword'
+  Plug 'ncm2/ncm2-path'
+  Plug 'ncm2/ncm2-jedi'
+  " Formater
+  Plug 'Chiel92/vim-autoformat'
+  " Theme
+  Plug 'pineapplegiant/spaceduck', { 'branch': 'main' }
+  " Python Plugins
+  Plug 'Valloric/YouCompleteMe'
+  Plug 'vim-syntastic/syntastic'
+  Plug 'nvie/vim-flake8'
+  Plug 'python-mode/python-mode'
+  Plug 'airblade/vim-gitgutter'
+  "
+  "general development plugins
+  Plug 'scrooloose/nerdtree'
+  Plug 'flazz/vim-colorschemes'
+  Plug 'davidhalter/jedi-vim'
+  Plug 'ervandew/supertab'
+  Plug 'ryanoasis/vim-webdevicons'
+  Plug 'direnv/direnv.vim'
+  Plug 'sheerun/vim-polyglot'
+  " This was fun and all, but getting data out sucked, so if they ever get an
+  " update, maybe try again
+  "Plugin 'ActivityWatch/aw-watcher-vim'
+  "
+  " Bind zonefile stuff
+  Plug 'seveas/bind.vim'
+  "
+  " extline extends rst stuff
+  Plug 'drmikehenry/vim-extline'
+  Plug 'brookhong/DBGPavim'
+  Plug 'dhruvasagar/vim-table-mode'
+  Plug 'godlygeek/tabular'
+  Plug 'plasticboy/vim-markdown'
+  " Additional languages
+  Plug 'nathanielc/vim-tickscript'
+  Plug 'fatih/vim-go'
+  Plug 'dbeniamine/cheat.sh-vim'
+  Plug 'jacqueswww/vim-vyper'
+  Plug 'tomlion/vim-solidity'
+call plug#end()
+
+filetype plugin indent on
+" Set colors for spaceduck
+if exists('+termguicolors')
+	let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+	let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+	set termguicolors
+endif
+let g:airline_theme = 'spaceduck'
+if exists('+termguicolors')
+      let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+      let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+      set termguicolors
+    endif
+
+   colorscheme spaceduck
+
+" set the number style to hybrid
+set number relativenumber
+
+
+" READ FROM .vimrc
+
 set nocompatible              " required
 set splitright
 filetype off                  " required
@@ -19,53 +98,6 @@ set nolist
 if !has('patch-8.1.201')
 	silent! python3 1
 endif
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
-"
-" Python Plugins
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'vim-syntastic/syntastic'
-Plugin 'nvie/vim-flake8'
-Plugin 'python-mode/python-mode'
-Plugin 'airblade/vim-gitgutter'
-"
-"general development plugins
-Plugin 'scrooloose/nerdtree'
-Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim'}
-Plugin 'flazz/vim-colorschemes'
-Plugin 'davidhalter/jedi-vim'
-Plugin 'ervandew/supertab'
-Plugin 'ryanoasis/vim-webdevicons'
-Plugin 'direnv/direnv.vim'
-" This was fun and all, but getting data out sucked, so if they ever get an
-" update, maybe try again
-"Plugin 'ActivityWatch/aw-watcher-vim'
-"
-" Bind zonefile stuff
-Plugin 'seveas/bind.vim'
-"
-" extline extends rst stuff
-Plugin 'drmikehenry/vim-extline'
-Plugin 'tpope/vim-surround.git'
-Plugin 'brookhong/DBGPavim'
-Plugin 'dhruvasagar/vim-table-mode'
-Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
-" Additional languages
-Plugin 'nathanielc/vim-tickscript'
-Plugin 'fatih/vim-go'
-Plugin 'dbeniamine/cheat.sh-vim'
-Plugin 'jacqueswww/vim-vyper'
-Plugin 'tomlion/vim-solidity'
-Plugin 'kien/ctrlp.vim'
-
 
 "let g:deoplete#enable_at_startup = 1
 "Plugin 'Shougo/deoplete.nvim'
@@ -74,7 +106,6 @@ Plugin 'kien/ctrlp.vim'
 " of Plugin)
 
 " All of your Plugins must be added before the following line
-call vundle#end()            " required
 filetype plugin indent on    " required
 "Powerline setup
 "set guifont=PowerLineSymbols\ DejaVu\ Sans\ Mono\ for\ Powerline\ 9
@@ -88,7 +119,7 @@ set laststatus=2
 "NerdTree map to <f2>
 map <F2> :NERDTreeToggle<CR>
 
-colorscheme jellybeans
+"colorscheme jellybeans
 
 "Make python-friendly tabs
 set tabstop=4
@@ -97,7 +128,7 @@ set smarttab
 set softtabstop=4
 set autoindent
 set expandtab
-let &colorcolumn="80,".join(range(81,999),",")
+"let &colorcolumn="80,".join(range(81,999),",")
 
 augroup vimrc_autocmds
 	autocmd!
@@ -175,5 +206,4 @@ let g:table_mode_corner_corner='+'
 let g:table_mode_header_fillchar='='
 let g:webdevicons_enable = 1
 let g:webdevicons_enable_nerdtree = 1
-set relativenumber
-set number
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab

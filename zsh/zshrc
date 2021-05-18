@@ -47,11 +47,12 @@ HIST_STAMPS="yyyy-mm-dd"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 # plugins=(git)
-plugins=(sudo taskwarrior common-aliases git-flow github keybase vi-mode fzf python)
-plugins+=(zsh-vi-mode)
+plugins=(sudo taskwarrior common-aliases git-flow github vi-mode fzf python)
+#plugins+=(zsh-vi-mode)
+plugins+=(fzf-tab)
 
 # User configuration
-export PATH="/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/home/kellya/bin:/home/kellya/incoming/git-annex.linux:/home/kellya/bin/keybase/bin:/home/kellya/.local/bin"
+export PATH="/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/home/kellya/bin:/home/kellya/incoming/git-annex.linux:/home/kellya/bin/keybase/bin:/home/kellya/.local/bin:/home/kellya/.cargo/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 
@@ -86,7 +87,7 @@ alias atnone="task context none;"
 alias icat="kitty +kitten icat"
 alias d="kitty +kitten diff"
 #eval "$(ntfy shell-integration)"
-source /usr/share/gems/gems/tmuxinator-0.6.11/completion/tmuxinator.zsh
+#source /usr/share/gems/gems/tmuxinator-0.6.11/completion/tmuxinator.zsh
 source ~/.private_aliases
 source /usr/bin/virtualenvwrapper.sh
 
@@ -101,7 +102,7 @@ alias ipython='ipython --no-confirm-exit'
 #Variable Exports
 export EDITOR='vim'
 export PATH="$PATH:/home/kellya/go/bin"
-export WORKON_HOME=/mnt/vdisks/projects/python_virtualenvs
+#export WORKON_HOME=/mnt/vdisks/projects/python_virtualenvs
 export LPASS_AGENT_TIMEOUT=0
 export PATH="/usr/local/heroku/bin:$PATH"
 
@@ -111,7 +112,7 @@ for f (~/.functions/**/*(N.))  . $f
 
 #This didn't work, but I'll leave it here in case someday it does
 #export AGNOSTER_PROMPT_SEGMENTS=("prompt_status" "prompt_context" "prompt_virtualenv" "prompt_dir" "prompt_end")
-cat /home/kellya/.local/share/franklinlogo.txt
+#cat /home/kellya/.local/share/franklinlogo.txt
 
 #Stop the annoying git prompt
 prompt_git () {
@@ -146,7 +147,7 @@ export PATH="$HOME/.poetry/bin:$PATH"
 #FZF stuff
 #source /usr/share/fzf/shell/key-bindings.zsh
 zvm_after_init_commands+=('[ -f /usr/share/fzf/shell/key-bindings.zsh ] && source /usr/share/fzf/shell/key-bindings.zsh')
-source ~/.oh-my-zsh/completions/fzf_completion
+#source ~/.oh-my-zsh/completions/fzf_completion
 export FZF_DEFAULT_OPTS="--extended"
 export FZF_DEFAULT_COMMAND="fd --type f"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
