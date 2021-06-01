@@ -1,0 +1,48 @@
+#set record=~/Maildir/arachnitech/Sent
+set sidebar_visible = yes
+set sidebar_short_path                  # Shorten mailbox names
+set sidebar_delim_chars="/"             # Delete everything up to the last / character
+set sidebar_width=27
+#set sidebar_folder_indent               # Indent folders whose names we've shortened
+#set sidebar_indent_string="  "          # Indent with two spaces
+color sidebar_new yellow default
+color sidebar_indicator default color17         # Dark blue background
+color sidebar_highlight white   color238        # Grey background
+color sidebar_spoolfile yellow  default         # Yellow
+color sidebar_new       green   default         # Green
+color sidebar_ordinary  default default         # Default colors
+color sidebar_flagged   red     default         # Red
+color sidebar_divider   color8  default         # Dark grey
+## set record="~/Maildir/Sent Mail"
+set spoolfile="+franklin/INBOX"
+# set header cache
+set header_cache=~/Localmail/hcache
+set mbox_type=Maildir
+set folder=~/Maildir/
+set sort=reverse-date-received
+set pager_stop=yes
+set fast_reply
+set include=yes
+# IMAP and INBOX (this should map to any existing IMAP folders)
+folder-hook arachnitech/* source ~/.mutt/accounts/arachnitech
+folder-hook franklin/* source ~/.mutt/accounts/franklin
+# auto_view text/html
+#alternative_order text/plain text/enriched text/html
+auto_view text/html
+auto_view text/calendar
+
+# Just do what I tell you to, consequences be damned
+set noconfirmappend
+#set confirmappend=yes
+set delete=yes
+# Show new notification when mail arrives
+set new_mail_command="notify-send -t 2000 --icon='/home/kellya/images/mutt-1.png' -a mutt -c mail \
+   'New Emails' '%n new messages' &"
+
+# Run a script to cat anything that has .rc as the extension to auto source things
+source ~/.mutt/sources.sh|
+
+# Addressbook lookup
+set query_command="khard email -p '%s'"
+bind editor <Tab> complete-query
+set editor="nvim -S ~/.mutt/vimrc"

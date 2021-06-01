@@ -1,0 +1,10 @@
+color body	brightblue black (https?|ftp)://[\-\.,/%~_:?&=\#a-zA-Z0-9]+
+color header cyan black subject
+color header yellow black from
+color header yellow black cc
+color header color244 black to
+color hdrdefault brightwhite black
+color quoted brightgreen black
+color status black cyan
+color indicator default blue
+color progress white red

@@ -1,0 +1,161 @@
+# Path to your oh-my-zsh installation.
+export ZSH=/home/kellya/.oh-my-zsh
+
+# Set name of the theme to load.
+# Look in ~/.oh-my-zsh/themes/
+# Optionally, if you set this to "random", it'll load a random theme each
+# time that oh-my-zsh is loaded.
+ZSH_THEME="agnoster"
+
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
+
+# Uncomment the following line to disable bi-weekly auto-update checks.
+# DISABLE_AUTO_UPDATE="true"
+
+# Uncomment the following line to change how often to auto-update (in days).
+# export UPDATE_ZSH_DAYS=13
+
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
+
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
+
+# Uncomment the following line to display red dots whilst waiting for completion.
+COMPLETION_WAITING_DOTS="true"
+
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# HIST_STAMPS="mm/dd/yyyy"
+HIST_STAMPS="yyyy-mm-dd"
+
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+# plugins=(git)
+plugins=(sudo taskwarrior common-aliases git-flow github vi-mode fzf python)
+#plugins+=(zsh-vi-mode)
+plugins+=(fzf-tab)
+
+# User configuration
+export PATH="/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/home/kellya/bin:/home/kellya/incoming/git-annex.linux:/home/kellya/bin/keybase/bin:/home/kellya/.local/bin:/home/kellya/.cargo/bin"
+# export MANPATH="/usr/local/man:$MANPATH"
+
+
+DISABLE_AUTO_UPDATE='true'
+source $ZSH/oh-my-zsh.sh
+
+source ~/dotfiles/zsh/zsh-git-prompt/zshrc.sh
+RPS1='$(git_super_status)'
+
+#source ~/.autoenv/activate.sh
+
+# changing over to direnv from autoenv
+eval "$(direnv hook zsh)"
+
+# Add PS1 for python virtualenv in direnv
+show_virtual_env() {
+      if [[ -n "$VIRTUAL_ENV" && -n "$DIRENV_DIR" ]]; then
+              echo "($(basename $VIRTUAL_ENV))"
+                fi
+            }
+        PS1='$(show_virtual_env)'$PS1
+
+#--------- End of direnv block ------------------------------------------------  
+
+unsetopt histverify
+alias in='task add +in'
+alias rtask="task rc:/home/kellya/.taskrc_tinslin"
+alias atwork="task context work"
+alias athome="task context home"
+alias atschool="task context school"
+alias atnone="task context none;"
+alias icat="kitty +kitten icat"
+alias d="kitty +kitten diff"
+#eval "$(ntfy shell-integration)"
+#source /usr/share/gems/gems/tmuxinator-0.6.11/completion/tmuxinator.zsh
+source ~/.private_aliases
+source /usr/bin/virtualenvwrapper.sh
+
+
+#Aliases
+alias dum='du -sh *|egrep ".*\.?[0-9]M"'
+alias keploy='echo -e "\e[101;97mKeploy was removed, its functionality is already built in ssh-copy-id, just use that\e[49m"; ssh-copy-id'
+alias shrug='curl shrug.io|xclip'
+alias weather='curl wttr.in'
+alias ipython='ipython --no-confirm-exit'
+
+#Variable Exports
+export EDITOR='vim'
+export PATH="$PATH:/home/kellya/go/bin"
+#export WORKON_HOME=/mnt/vdisks/projects/python_virtualenvs
+export LPASS_AGENT_TIMEOUT=0
+export PATH="/usr/local/heroku/bin:$PATH"
+
+#Source all the custom functions
+# Load custom functions
+for f (~/.functions/**/*(N.))  . $f
+
+#This didn't work, but I'll leave it here in case someday it does
+#export AGNOSTER_PROMPT_SEGMENTS=("prompt_status" "prompt_context" "prompt_virtualenv" "prompt_dir" "prompt_end")
+#cat /home/kellya/.local/share/franklinlogo.txt
+
+#Stop the annoying git prompt
+prompt_git () {
+        :
+}
+
+
+# hyperdrive autocomplete setup
+HYPERDRIVE_AC_ZSH_SETUP_PATH=/home/kellya/.cache/hyperdrive-daemon/autocomplete/zsh_setup && test -f $HYPERDRIVE_AC_ZSH_SETUP_PATH && source $HYPERDRIVE_AC_ZSH_SETUP_PATH;
+alias vi=nvim
+alias ashow="litecli --auto-vertical-output /home/kellya/snap/accountable2you/common/storage.db -e \"select * from log;\""
+alias akill="litecli --auto-vertical-output /home/kellya/snap/accountable2you/common/storage.db -e \"delete from log;\""
+alias mutt="neomutt"
+fpath+=~/.zfunc
+compinit
+kitty + complete setup zsh | source /dev/stdin
+#
+# Enable 'z' tracking for directory speediness
+source /usr/libexec/z.sh
+
+export PATH="$HOME/.poetry/bin:$PATH"
+
+#function chpwd() {
+#  if [ -r $PWD/.zsh_config ]; then
+#    source $PWD/.zsh_config
+#  else
+#    source $HOME/.zshrc
+#  fi
+#}
+
+#
+#FZF stuff
+#source /usr/share/fzf/shell/key-bindings.zsh
+zvm_after_init_commands+=('[ -f /usr/share/fzf/shell/key-bindings.zsh ] && source /usr/share/fzf/shell/key-bindings.zsh')
+#source ~/.oh-my-zsh/completions/fzf_completion
+export FZF_DEFAULT_OPTS="--extended"
+export FZF_DEFAULT_COMMAND="fd --type f"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
+#ZVM customizations
+# Cursors seem backwards, swap 'em
+ZVM_INSERT_MODE_CURSOR=$ZVM_CURSOR_BLOCK
+ZVM_NORMAL_MODE_CURSOR=$ZVM_CURSOR_BEAM
+ZVM_OPPEND_MODE_CURSOR=$ZVM_CURSOR_UNDERLINE
+# defaults to last, make each line always insert
+ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT

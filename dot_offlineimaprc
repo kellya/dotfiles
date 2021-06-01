@@ -1,0 +1,45 @@
+[general]
+accounts = arachnitech, franklin
+maxsyncaccounts = 2
+fsync = true
+
+[Account arachnitech]
+localrepository = arachnitech-Local
+remoterepository = arachnitech-Remote
+postsynchook = notmuch new
+autorefresh = 5
+
+[Repository arachnitech-Remote]
+type = IMAP
+remotehost = 192.168.0.125
+remoteuser = kellya
+remotepassfile = ~/.credentials/arachnitech_imap
+ssl = no
+idlefolders = ['INBOX',]
+
+[Repository arachnitech-Local]
+type = Maildir
+localfolders = ~/Maildir/arachnitech
+restoreatime = no
+
+[Account franklin]
+localrepository = franklin-Local
+remoterepository = franklin-Remote
+autorefresh = 5
+
+postsynchook = notmuch new
+
+[Repository franklin-Remote]
+type = IMAP
+remotehost = 127.0.0.1
+remoteport = 1143
+remoteuser = alex.kelly@franklin.edu
+remotepassfile = ~/.credentials/franklin_imap
+ssl = no
+idlefolders = ['INBOX',]
+folderfilter = lambda foldername: foldername not in ['STFU','Newsletters', 'Clutter', 'Lego', 'Lego/Registrations', 'remote_addrbook', 'Conversation History', 'issues', 'spam', 'Windows crap', 'Sync Issues', 'Unsent Messages', 'Unsent Messages/Voicemessages', 'Junk', 'Unsent Messages/VoiceOutbox', 'Sync Issues/Server Failures', 'Sync Issues/Local Failures', 'Sync Issues/Conflicts']
+
+[Repository franklin-Local]
+type = Maildir
+localfolders = ~/Maildir/franklin
+restoreatime = no
