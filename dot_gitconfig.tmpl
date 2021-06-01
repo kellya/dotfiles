@@ -1,45 +1,45 @@
 [core]
-	editor = vim
-	quotepath = false
+    editor = vim
+    quotepath = false
     pager = delta
 [alias]
-	st = status
-	ci = commit
-	br = branch
-	co = checkout
-	df = diff
-	lg = log -p
-	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+    st = status
+    ci = commit
+    br = branch
+    co = checkout
+    df = diff
+    lg = log -p
+    hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
 [credential]
-	helper = cache --timeout=3600
+    helper = cache --timeout=3600
 [push]
-	default = simple
+    default = simple
 [github]
     user = {{ (index (lastpass "github_token") 0).username | quote }}
     token = {{ (index (lastpass "github_token") 0).password | quote }}
 [diff]
-	tool = meld
+    tool = meld
 [difftool]
-	prompt = false
+    prompt = false
 [color]
-	ui = auto
+    ui = auto
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
 [pull]
-	rebase = false
+    rebase = false
 [user]
-    name = {{ .contact.work.name }}
-    email = {{ .contact.work.email }}
-[includeIf "gitdir:~/projects/arachnitech/"]
-  path = ~/.gitconfig-arachnitech
+    name = {{ .gitconfig.work.name }}
+    email = {{ .gitconfig.work.email }}
+[includeIf "gitdir:~/projects/{{- .gitconfig.home.config }}/"]
+    path = ~/.gitconfig-{{- .gitconfig.home.config }}
 
-[includeIf "gitdir:~/projects/franklin/"]
-  path = ~/.gitconfig-franklin
+[includeIf "gitdir:~/projects/{{- .gitconfig.work.config }}/"]
+    path = ~/.gitconfig-{{- .gitconfig.work.config }}
 [init]
-	defaultBranch = main
+    defaultBranch = main
 [delta]
     plus-style = "syntax #012800"
     minus-style = "syntax #340001"
