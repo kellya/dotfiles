@@ -159,3 +159,4 @@ ZVM_NORMAL_MODE_CURSOR=$ZVM_CURSOR_BEAM
 ZVM_OPPEND_MODE_CURSOR=$ZVM_CURSOR_UNDERLINE
 # defaults to last, make each line always insert
 ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT
+chezmoi completion zsh | source /dev/stdin
