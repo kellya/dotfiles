@@ -100,7 +100,7 @@ alias weather='curl wttr.in'
 alias ipython='ipython --no-confirm-exit'
 
 #Variable Exports
-export EDITOR='vim'
+export EDITOR='nvim'
 export PATH="$PATH:/home/kellya/go/bin"
 #export WORKON_HOME=/mnt/vdisks/projects/python_virtualenvs
 export LPASS_AGENT_TIMEOUT=0
