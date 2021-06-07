@@ -35,7 +35,7 @@ call plug#begin(g:plugged_home)
   Plug 'direnv/direnv.vim'
   Plug 'sheerun/vim-polyglot'
   Plug 'tpope/vim-fugitive'
-  Plug 'psf/black', { 'branch': 'stable' }
+  Plug 'psf/black', { 'branch': 'main' }
   " This was fun and all, but getting data out sucked, so if they ever get an
   " update, maybe try again
   "Plugin 'ActivityWatch/aw-watcher-vim'
