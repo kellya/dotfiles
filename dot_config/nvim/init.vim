@@ -36,6 +36,7 @@ call plug#begin(g:plugged_home)
   Plug 'sheerun/vim-polyglot'
   Plug 'tpope/vim-fugitive'
   Plug 'psf/black', { 'branch': 'main' }
+  Plug 'junegunn/fzf.vim'
   " This was fun and all, but getting data out sucked, so if they ever get an
   " update, maybe try again
   "Plugin 'ActivityWatch/aw-watcher-vim'
@@ -210,3 +211,4 @@ let g:webdevicons_enable = 1
 let g:webdevicons_enable_nerdtree = 1
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 autocmd BufWritePre *.py execute ':Black'
+let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.5, 'highlight': 'Comment' } }
