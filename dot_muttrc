@@ -39,6 +39,11 @@ set delete=yes
 set new_mail_command="notify-send -t 2000 --icon='/home/kellya/images/mutt-1.png' -a mutt -c mail \
    'New Emails' '%n new messages' &"
 
+#Remove annoying things
+set markers=no
+set smart_wrap=no
+set beep=no
+
 # Run a script to cat anything that has .rc as the extension to auto source things
 source ~/.mutt/sources.sh|
 
@@ -46,3 +51,4 @@ source ~/.mutt/sources.sh|
 set query_command="khard email -p '%s'"
 bind editor <Tab> complete-query
 set editor="nvim -S ~/.mutt/vimrc"
+
