@@ -127,7 +127,8 @@ alias ashow="litecli --auto-vertical-output /home/kellya/snap/accountable2you/co
 alias akill="litecli --auto-vertical-output /home/kellya/snap/accountable2you/common/storage.db -e \"delete from log;\""
 alias mutt="neomutt"
 fpath+=~/.zfunc
-compinit
+autoload -U compinit
+compinit -i
 kitty + complete setup zsh | source /dev/stdin
 #
 # Enable 'z' tracking for directory speediness
@@ -160,3 +161,4 @@ ZVM_OPPEND_MODE_CURSOR=$ZVM_CURSOR_UNDERLINE
 # defaults to last, make each line always insert
 ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT
 chezmoi completion zsh | source /dev/stdin
+
