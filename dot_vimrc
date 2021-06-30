@@ -65,6 +65,7 @@ Plugin 'dbeniamine/cheat.sh-vim'
 Plugin 'jacqueswww/vim-vyper'
 Plugin 'tomlion/vim-solidity'
 Plugin 'kien/ctrlp.vim'
+Plugin 'kmonad/kmonad-vim'
 
 
 "let g:deoplete#enable_at_startup = 1
