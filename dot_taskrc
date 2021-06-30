@@ -35,7 +35,7 @@ data.location=~/.task
 #include /usr/share/task/solarized-light-256.theme
 #include /usr/share/task/light-256.theme
 #include /usr/share/task/no-color.theme
-include ~/.task/spaceduck.theme
+include ~/projects/arachnitech/tw-spaceduck/spaceduck.theme
 
 taskd.certificate=/home/kellya/.task/private.certificate.pem
 taskd.key=/home/kellya/.task/private.key.pem
@@ -56,6 +56,8 @@ uda.intheamtrellolistname.type=string
 uda.intheamtrellolistname.label=Inthe.AM Trello List Name
 uda.messageid.type=string
 uda.messageid.label=Message-ID
+uda.joplin.type=string
+uda.joplin.label=Joplin
 verbose=no
 report.simple.description=Simple list of open tasks by project
 report.simple.columns=id,project,description.count
