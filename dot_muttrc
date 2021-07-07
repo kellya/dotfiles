@@ -50,5 +50,5 @@ source ~/.mutt/sources.sh|
 # Addressbook lookup
 set query_command="khard email -p '%s'"
 bind editor <Tab> complete-query
-set editor="nvim -S ~/.mutt/vimrc"
 
+set editor="nvim -S ~/.mutt/vimrc"
