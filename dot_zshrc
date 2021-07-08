@@ -132,7 +132,8 @@ compinit -i
 kitty + complete setup zsh | source /dev/stdin
 #
 # Enable 'z' tracking for directory speediness
-source /usr/libexec/z.sh
+# Temporarily disabiling while using fasd
+# source /usr/libexec/z.sh
 
 export PATH="$HOME/.poetry/bin:$PATH"
 
@@ -162,3 +163,9 @@ ZVM_OPPEND_MODE_CURSOR=$ZVM_CURSOR_UNDERLINE
 ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT
 chezmoi completion zsh | source /dev/stdin
 
+#Trying out fasd over z.  There's nothing wrong with z, it just looks like fasd might add some more completion and stuff that might be useful
+eval "$(fasd --init auto)"
+
+#Attempting to try zplug
+source ~/.zplug/init.zsh
+zplug "wookayin/fzf-fasd"
