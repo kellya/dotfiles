@@ -39,7 +39,7 @@
  cesc (tap-next esc lctl)
  f12 (tap-next @snum @num)
  dat (tap-macro (cmd-button "date |xclip") C-V)
- tim (tap-macro (cmd-button "date  '+%Y-%m-%d %H:%M:%S'|xclip") C-V)
+ tim (tap-macro (cmd-button "date \"+%Y-%m-%d %H:%M:%S\"|xclip") C-V)
  )
 
 (deflayer standard_layer
